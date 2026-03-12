@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 1 - Penggabungan String</title>
+    <style>
+        body { font-family: sans-serif; font-size: 18px; margin: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>Hasil Latihan 1</h2>
+    <div id="tampil-hasil"></div>
+
+    <script>
+        // Di JavaScript, penggabungan teks menggunakan tanda plus (+)
+        // Kita jadikan string ("") agar angka 1 dan 2 digabung menjadi "12", bukan ditambah menjadi 3
+        let a = "1";
+        let b = "2";
+        let c = a + b; 
+        
+        // Mengubah string "12" menjadi angka murni, lalu ditambah 1
+        let d = parseInt(c) + 1; 
+        
+        let e = "Number";
+        let f = e + d; 
+
+        // Menampilkan hasilnya ke layar web (pengganti echo)
+        document.getElementById('tampil-hasil').innerHTML = d + "<br>" + f;
+    </script>
+
+</body>
+</html>
