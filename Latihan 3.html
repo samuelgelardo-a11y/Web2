@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 3 - Kalkulator Sederhana</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .label-merah { color: #c00000; font-weight: bold; margin-bottom: 5px; display: block; }
+        .form-group { display: inline-block; vertical-align: bottom; margin: 0 5px; }
+        input, select, button { padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="form-group">
+        <span class="label-merah">Nilai I</span>
+        <input type="number" id="nilai1" step="any" required style="width: 100px;">
+    </div>
+
+    <div class="form-group">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <span class="label-merah">Nilai II</span>
+        <input type="number" id="nilai2" step="any" required style="width: 100px;">
+    </div>
+
+    <div class="form-group">
+        <button type="button" onclick="hitungHasil()">submit</button>
+    </div>
+
+    <br><br>
+
+    <div id="tempat-hasil"></div>
+
+    <script>
+        function hitungHasil() {
+            // Mengambil angka dari input
+            let val1 = parseFloat(document.getElementById('nilai1').value);
+            let val2 = parseFloat(document.getElementById('nilai2').value);
+            let op = document.getElementById('operator').value;
+            let hasil = 0;
+
+            // Validasi jika kolom kosong
+            if (isNaN(val1) || isNaN(val2)) {
+                alert("Harap masukkan angka di kedua kolom!");
+                return;
+            }
+
+            // Melakukan perhitungan
+            switch (op) {
+                case '+':
+                    hasil = val1 + val2;
+                    break;
+                case '-':
+                    hasil = val1 - val2;
+                    break;
+                case '*':
+                    hasil = val1 * val2;
+                    break;
+                case '/':
+                    if (val2 !== 0) {
+                        hasil = val1 / val2;
+                    } else {
+                        hasil = "Error (Tidak bisa dibagi 0)";
+                    }
+                    break;
+            }
+
+            // Menampilkan hasil ke layar
+            let tampilanHasil = "<hr style='width: 50%;'>" +
+                                "<h3>Hasil Perhitungan:</h3>" +
+                                "<p style='font-size: 18pt;'>" + val1 + " " + op + " " + val2 + " = <b>" + hasil + "</b></p>";
+            
+            document.getElementById('tempat-hasil').innerHTML = tampilanHasil;
+        }
+    </script>
+
+</body>
+</html>
