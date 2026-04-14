@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Diskon</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .hasil {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hitung Diskon</h2>
+
+    <input type="number" id="total_beli" placeholder="Masukkan jumlah belanja">
+    <button onclick="hitung()">Tentukan Diskon</button>
+
+    <div id="hasil" class="hasil" style="display:none;"></div>
+</div>
+
+<script>
+function hitung() {
+    let total = parseInt(document.getElementById("total_beli").value);
+    let diskon = 0;
+
+    if (total >= 200000) {
+        diskon = 0.1;
+    } else if (total >= 100000) {
+        diskon = 0.05;
+    } else {
+        diskon = 0.01;
+    }
+
+    let nilai_diskon = total * diskon;
+    let total_bayar = total - nilai_diskon;
+
+    document.getElementById("hasil").style.display = "block";
+    document.getElementById("hasil").innerHTML =
+        "<b>Total Belanja:</b> Rp " + total.toLocaleString() + "<br>" +
+        "<b>Diskon (" + (diskon*100) + "%):</b> Rp " + nilai_diskon.toLocaleString() + "<br>" +
+        "<b>Total Bayar:</b> Rp " + total_bayar.toLocaleString();
+}
+</script>
+
+</body>
+</html>
