@@ -36,4 +36,27 @@ input {font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;height
 <option value="Teknik Elektro">Teknik Elektro 
 <option value="Komputer Akuntansi">Komputer Akuntansi 
 </select></td> 
-</tr>Z
+</tr>
+  <tr height="46"> 
+<td> </td> 
+<td>Alamat</td> 
+<td><input type="text" name="alamat" size="50" maxlength="30" /></td> 
+</tr> 
+<tr height="46"> 
+<td> </td> 
+<td>No. Telp</td> 
+<td><input type="text" name="telepon" size="20" maxlength="12" /></td> 
+</tr>
+  <tr height="46"> 
+<td> </td> 
+<td> </td> 
+<td><input type="submit" name="Submit" value="Submit">    
+<input type="reset" name="reset" value="Cancel"></td> 
+</tr> 
+</table> 
+</form> 
+</div> 
+</body> 
+</html>
+
+  
