@@ -12,7 +12,7 @@ if (isset($_POST['Login'])) {
     $pass = $_POST['pass'];
 
     // Periksa login
-    if ($user == "rahadian" && $pass == "123") {
+    if ($user == "sandro" && $pass == "123") {
 
         // Membuat session
         $_SESSION['login'] = $user;
